@@ -9,24 +9,50 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
+        <TextBlock FontSize="24">Printing Video like a champ</TextBlock>
         <StackPanel Orientation="Horizontal">
             <TextBox PlaceholderText="Teams Join URL" TextWrapping="Wrap" x:Name="JoinUrlTextBox" Margin="10,10,10,10" Width="600"></TextBox>
             <Button Content="Join" Click="CallButton_ClickAsync" x:Name="CallButton" Margin="10,10,10,10"></Button>
             <Button Content="Leave" Click="HangupButton_Click" x:Name="HangupButton" Margin="10,10,10,10"></Button>
             <Button Content="Take snapshot" Click="SnapshotButton_Click" x:Name="SnapshotButton" Margin="10,10,10,10"></Button>
+            <Button x:Name="InvokePrintingButton" Content="Print" Click="InvokePrintingButton_Click"/>
         </StackPanel>
+        <StackPanel Orientation="Vertical" x:Name="PrintContainer" Opacity="0"/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-            <MediaPlayerElement x:Name="Video1" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
-            <MediaPlayerElement x:Name="Video2" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
-            <MediaPlayerElement x:Name="Video3" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
-            <MediaPlayerElement x:Name="Video4" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
             <StackPanel Orientation="Horizontal">
-                <Image x:Name="Image1" Width="600" Height="400" />
-                <Image x:Name="Image2" Width="600" Height="400" />                
+                <MediaPlayerElement x:Name="Video1" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
+                <MediaPlayerElement x:Name="Video2" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Image x:Name="Image3" Width="600" Height="400" />
-                <Image x:Name="Image4" Width="600" Height="400" />
+                <MediaPlayerElement x:Name="Video3" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
+                <MediaPlayerElement x:Name="Video4" AutoPlay="True" Stretch="UniformToFill" Width="800" Height="600" Visibility="Collapsed" />
+            </StackPanel>
+            <StackPanel x:Name="ImagePanel2" Orientation="Vertical">
+                <StackPanel x:Name="ImagePanel" Orientation="Horizontal">
+                    <Image Width="400" Height="300" x:Name="TestImage" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="400" Height="300" >
+                        <Rectangle.Fill>
+                            <ImageBrush x:Name="Image1" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Width="400" Height="300" >
+                        <Rectangle.Fill>
+                            <ImageBrush x:Name="Image2" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Width="400" Height="300" >
+                        <Rectangle.Fill>
+                            <ImageBrush x:Name="Image3" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Width="400" Height="300" >
+                        <Rectangle.Fill>
+                            <ImageBrush x:Name="Image4" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </StackPanel>

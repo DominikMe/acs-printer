@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "VideoCallPrinter (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "VideoCallPrinter (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

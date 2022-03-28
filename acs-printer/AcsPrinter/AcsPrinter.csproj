@@ -123,6 +123,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Printer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +132,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\test.jpg" />
     <Content Include="Assets\video.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -154,8 +156,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Communication.Calling">
-      <Version>1.0.0-beta.31</Version>
+    <PackageReference Include="Microsoft.IC3.Azure.Communication.Calling.UAP">
+      <Version>1.0.0-beta.31.1-private-drop-pre-validation</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.13</Version>

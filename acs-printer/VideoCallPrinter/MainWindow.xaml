@@ -1,0 +1,58 @@
+﻿<Window
+    x:Class="VideoCallPrinter.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VideoCallPrinter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock FontSize="24">Printing Video like a champ</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBox PlaceholderText="Teams Join URL" TextWrapping="Wrap" x:Name="JoinUrlTextBox" Margin="10,10,10,10" Width="600"></TextBox>
+            <Button Content="Join" Click="CallButton_ClickAsync" x:Name="CallButton" Margin="10,10,10,10"></Button>
+            <Button Content="Leave" Click="HangupButton_Click" x:Name="HangupButton" Margin="10,10,10,10"></Button>
+            <Button Content="Take snapshot" Click="SnapshotButton_Click" x:Name="SnapshotButton" Margin="10,10,10,10"></Button>
+        </StackPanel>
+        <!--<StackPanel Orientation="Vertical" Margin="0,10,10,0">
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                <TextBlock Margin="10,10,10,10">Select printer:</TextBlock>
+                <DropDownButton Width="200" Margin="10,5,10,10">
+                    <DropDownButton.Flyout>
+                        <MenuFlyout Placement="Bottom" x:Name="printerFlyout">
+                        </MenuFlyout>
+                    </DropDownButton.Flyout>
+                </DropDownButton>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                <TextBlock Margin="24,10,10,10">Every</TextBlock>
+                <TextBox x:Name="pageCount"></TextBox>
+                <TextBlock Margin="10,10,10,10">seconds.</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                <TextBlock Margin="10,10,10, 10">Total of</TextBlock>
+                <TextBox x:Name="per"></TextBox>
+                <TextBlock Margin="10,10,10,10">pages.</TextBlock>
+            </StackPanel>
+        </StackPanel>-->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <MediaPlayerElement x:Name="Video1" AutoPlay="True" Stretch="UniformToFill" Width="400" Height="300" Visibility="Collapsed" />
+                <MediaPlayerElement x:Name="Video2" AutoPlay="True" Stretch="UniformToFill" Width="400" Height="300" Visibility="Collapsed" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <MediaPlayerElement x:Name="Video3" AutoPlay="True" Stretch="UniformToFill" Width="400" Height="300" Visibility="Collapsed" />
+                <MediaPlayerElement x:Name="Video4" AutoPlay="True" Stretch="UniformToFill" Width="400" Height="300" Visibility="Collapsed" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="Image1" Width="600" Height="400" />
+                <Image x:Name="Image2" Width="600" Height="400" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Image x:Name="Image3" Width="600" Height="400" />
+                <Image x:Name="Image4" Width="600" Height="400" />
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
