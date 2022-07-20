@@ -43,7 +43,7 @@ namespace AcsPrinter
             _elements = new[] { (Video1, Image1), (Video2, Image2), (Video3, Image3), (Video4, Image4) };
             _printer = new(Dispatcher);
 
-            TestStaticVideo();
+            //TestStaticVideo();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e) => _printer.RegisterForPrinting();
@@ -63,7 +63,7 @@ namespace AcsPrinter
         {
             callClient = new CallClient();
 
-            var credential = new CommunicationTokenCredential("eyJhbGciOiJSUzI1NiIsImtpZCI6IjEwNCIsIng1dCI6IlJDM0NPdTV6UENIWlVKaVBlclM0SUl4Szh3ZyIsInR5cCI6IkpXVCJ9.eyJza3lwZWlkIjoiYWNzOjQ5MzVlODBlLTM5MjgtNDZkMS05ODY4LTNhZDA5NzkwZWVhNl8wMDAwMDAxMC01OTA1LTc4ZGYtNTcwYy0xMTNhMGQwMDFkMzAiLCJzY3AiOjE3OTIsImNzaSI6IjE2NDgwNzg2MDciLCJleHAiOjE2NDgxNjUwMDcsImFjc1Njb3BlIjoidm9pcCIsInJlc291cmNlSWQiOiI0OTM1ZTgwZS0zOTI4LTQ2ZDEtOTg2OC0zYWQwOTc5MGVlYTYiLCJpYXQiOjE2NDgwNzg2MDd9.b-9j2STKxCbfr0hXr4FnGdA68GPN0WvsXFwSxYD8yBvYpO-Lg86z9h15fltHPznUY43xPy1pKEVt4MKlpLlEQd-LT_ZUuoh9EJXHkDnhDy1YA_zG2eZZ90kSS0xQuqh2fF1o11sUA27u8Dzn5pdZePxTjQWDtivZaLaW8U1mb_VpwLhjF1Dx9qp0taudKp7IOwoAh5TlydgtoJwRpA4uw12hVRoPdox9MNtD6tpx4N-2rkfax8nacTVTk5UOiDIvqRVUNzLsiwealWkgmIJaB8oSyQ3SD3-R2f1aLmioJsN-j_VgWsy0M9_uitQiEVdEP4mVmbJBw5zJapzV2g0i3Q");
+            var credential = new CommunicationTokenCredential("eyJhbGciOiJSUzI1NiIsImtpZCI6IjEwNCIsIng1dCI6IlJDM0NPdTV6UENIWlVKaVBlclM0SUl4Szh3ZyIsInR5cCI6IkpXVCJ9.eyJza3lwZWlkIjoiYWNzOjQ5MzVlODBlLTM5MjgtNDZkMS05ODY4LTNhZDA5NzkwZWVhNl8wMDAwMDAxMC03MzI4LTExNWYtOWZmYi05YzNhMGQwMDAzNTUiLCJzY3AiOjE3OTIsImNzaSI6IjE2NDg1MTcwODIiLCJleHAiOjE2NDg2MDM0ODIsImFjc1Njb3BlIjoiY2hhdCx2b2lwIiwicmVzb3VyY2VJZCI6IjQ5MzVlODBlLTM5MjgtNDZkMS05ODY4LTNhZDA5NzkwZWVhNiIsImlhdCI6MTY0ODUxNzA4Mn0.YvwKlwach6smOV4Z9SbjSoSRsmF-lSx6PE_Of3G_xKeHZmI4syceB6_OIdEUYd1tjiQlUyEAVXTadWNPaLV9n5ZYNhpgttc2nFxVRAeLdrUufZpQmiqPupzXpjTNohPGtUD5EgjSSq4cfqt8gLFYk1ThpmJh9qSJf-8zYAqA5XKHJUGe9fimxdccuO55W-3GYzBYJ-WRUHTAs6ZlWKSPqDTev57cOLYPDUybjDcwvIm3lDY_9qu8Hzq2qAXSCB6NtpB1It04fNKngsqg62uVLvYPi-WaHVJ5_Bp37nXfBmTNFipAsuG5aAt5HX622NNNdvWIH0LsPG7q0BQhCEJ94Q");
 
             _callAgent = callClient.CreateCallAgent(credential, new CallAgentOptions()
             {
@@ -144,6 +144,9 @@ namespace AcsPrinter
                 //mediaPlayerElement.Source = MediaSource.CreateFromUri(new Uri("skype://urlbinding_sink_1/"));
 
                 mediaPlayerElement.MediaPlayer.Play();
+                
+                // bad place
+                CallButton.Content = "✅ Joined";
             });
         }
 

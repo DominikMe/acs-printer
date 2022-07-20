@@ -8,14 +8,16 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock FontSize="24">Printing Video like a champ</TextBlock>
+    <StackPanel Orientation="Vertical">
+        <TextBlock Margin="20,20,0,20"  FontSize="24">Your printing solution for Microsoft Teams.</TextBlock>
         <StackPanel Orientation="Horizontal">
             <TextBox PlaceholderText="Teams Join URL" TextWrapping="Wrap" x:Name="JoinUrlTextBox" Margin="10,10,10,10" Width="600"></TextBox>
-            <Button Content="Join" Click="CallButton_ClickAsync" x:Name="CallButton" Margin="10,10,10,10"></Button>
-            <Button Content="Leave" Click="HangupButton_Click" x:Name="HangupButton" Margin="10,10,10,10"></Button>
-            <Button Content="Take snapshot" Click="SnapshotButton_Click" x:Name="SnapshotButton" Margin="10,10,10,10"></Button>
-            <Button x:Name="InvokePrintingButton" Content="Print" Click="InvokePrintingButton_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="📞 Join" Click="CallButton_ClickAsync" x:Name="CallButton" Margin="10,10,10,10"></Button>
+            <Button Content="Leave" Click="HangupButton_Click" x:Name="HangupButton" Margin="10,10,10,10" Visibility="Collapsed"></Button>
+            <Button Content="Take snapshot" Click="SnapshotButton_Click" x:Name="SnapshotButton" Margin="10,10,10,10" Visibility="Collapsed"></Button>
+            <Button x:Name="InvokePrintingButton" Content="🖨️ Print" Click="InvokePrintingButton_Click"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" x:Name="PrintContainer" Opacity="0"/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
